@@ -11,6 +11,7 @@ for(j in 1:3){
   for(i in 1:n){
     extract_dna[i+1]=j+3*i
   }
+  names(raw) = sub(";.*", "", names(raw)) #rename individual
   write.FASTA(x = raw[extract_dna],
               file = paste("./output/Codon_",j,".fas",sep = ""))
 }
